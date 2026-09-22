@@ -23,6 +23,26 @@ Mini-Game-Snake/
 └── README.md
 ```
 
+## 🌐 Live Demo
+
+Once GitHub Pages is enabled for this repository, the game will be available at:
+
+**https://imritesh18.github.io/Mini-Game-Snake/**
+
+The repository includes a root `index.html` configured as the GitHub Pages entry point and redirects to the full web game in `web/index.html`.
+
+### Enable GitHub Pages
+
+In the repository:
+
+1. Go to **Settings** → **Pages**.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Select branch **main** and folder **/ (root)**.
+4. Click **Save**.
+5. Wait for GitHub Pages to deploy.
+
+After deployment, open the Live Demo URL above.
+
 ## 🌐 Web Version – Live Server
 
 The web version is the main playable interface.
