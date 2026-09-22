@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game | Mini Game Project</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-card">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">MINI GAME PROJECT</p>
+          <h1>Snake Game</h1>
+          <p class="subtitle">Classic gameplay with a modern interface.</p>
+        </div>
+        <div id="status" class="status ready">READY</div>
+      </header>
+      <div class="stats">
+        <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+        <div class="stat"><span>High Score</span><strong id="highScore">0</strong></div>
+        <div class="stat"><span>Level</span><strong id="level">1</strong></div>
+      </div>
+      <div class="board-wrap">
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-box">
+            <div class="snake-icon">🐍</div>
+            <h2 id="overlayTitle">Ready to Play?</h2>
+            <p id="overlayText">Press Start or use an arrow key to begin.</p>
+            <button id="overlayButton" class="primary">Start Game</button>
+          </div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="primary">▶ Start</button>
+        <button id="pauseBtn" class="secondary">Ⅱ Pause</button>
+        <button id="restartBtn" class="secondary">↻ Restart</button>
+      </div>
+      <div class="mobile-controls" aria-label="Direction controls">
+        <button data-dir="up">▲</button>
+        <div>
+          <button data-dir="left">◀</button>
+          <button data-dir="down">▼</button>
+          <button data-dir="right">▶</button>
+        </div>
+      </div>
+      <footer>
+        <span>Controls: <b>Arrow Keys</b> / <b>W A S D</b></span>
+        <span>Eat food • Grow • Don't hit the wall</span>
+      </footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
