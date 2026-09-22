@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg: #07111f;
+  --card: #0d1b2d;
+  --panel: #101f33;
+  --border: #223852;
+  --text: #edf5ff;
+  --muted: #91a4bb;
+  --accent: #39e58c;
+  --accent2: #21b8ff;
+  --danger: #ff5f6d;
+}
+body {
+  min-height: 100vh;
+  font-family: Inter, Segoe UI, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(33,184,255,.13), transparent 28%),
+    radial-gradient(circle at 85% 80%, rgba(57,229,140,.10), transparent 30%),
+    var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+.app { width: min(760px, 100%); }
+.game-card {
+  background: rgba(13, 27, 45, .96);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1; }
+.subtitle { color: var(--muted); margin-top: 8px; }
+.status {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.status.ready { color: var(--accent2); }
+.status.playing { color: var(--accent); }
+.status.paused { color: #ffd166; }
+.status.gameover { color: var(--danger); }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.stat strong { font-size: 22px; }
+.board-wrap {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  background: #06101c;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+canvas { width: 100%; height: 100%; display: block; }
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 10, 18, .72);
+  backdrop-filter: blur(5px);
+}
+.overlay.hidden { display: none; }
+.overlay-box {
+  text-align: center;
+  width: min(360px, 85%);
+  background: rgba(16, 31, 51, .96);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+.snake-icon { font-size: 42px; margin-bottom: 8px; }
+.overlay-box h2 { font-size: 26px; }
+.overlay-box p {
+  color: var(--muted);
+  margin: 8px 0 20px;
+  line-height: 1.5;
+}
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: var(--text);
+  background: #172a42;
+  border: 1px solid var(--border);
+  font-weight: 800;
+  cursor: pointer;
+  transition: .18s ease;
+}
+button:hover { transform: translateY(-1px); border-color: #3a5979; }
+button:active { transform: translateY(1px); }
+button.primary {
+  background: linear-gradient(135deg, var(--accent), #1bc878);
+  color: #04130b;
+  border: 0;
+}
+.mobile-controls {
+  display: none;
+  text-align: center;
+  margin-top: 14px;
+}
+.mobile-controls div {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.mobile-controls button { width: 58px; height: 48px; padding: 0; }
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+footer b { color: var(--text); }
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .game-card { padding: 16px; border-radius: 18px; }
+  .topbar { align-items: center; }
+  .subtitle { font-size: 13px; }
+  .status { padding: 7px 9px; }
+  .mobile-controls { display: block; }
+  footer { font-size: 11px; }
+}
